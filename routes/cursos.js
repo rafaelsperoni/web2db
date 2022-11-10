@@ -2,21 +2,15 @@ const express = require('express')
 const CursosController = require('../controllers/CursosController')
 const router = express.Router()
 
-router.get('/', CursosController.getAll.bind(CursosController))
-// router.get('/', (req, res)=>{
-//     res.send('lista dos cursos')
-// })
+router.get('/', (req, res, next) => CursosController.getAll(req, res, next) )
 
-router.get('/:_id', CursosController.getById.bind(CursosController))
-// router.get('./:_id', (req, res)=>{
-//     res.send('dados do curso por id')
-// })
+router.get('/:id', (req, res, next) => CursosController.getById(req, res, next))
 
 router.post('/', (req, res)=>{
     res.send('cria um novo curso')
 })
 
-router.put('/:_id', (req, res)=>{
+router.put('/:id', (req, res)=>{
     res.send('altera um curso')
 })
 
@@ -25,3 +19,10 @@ router.delete('/:_id', (req, res)=>{
 })
 
 module.exports = router
+
+
+
+
+
+
+//router.get('/', CursosController.getAll.bind(CursosController))

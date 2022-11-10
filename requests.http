@@ -1,0 +1,13 @@
+GET http://127.0.0.1:8001/cursos
+
+###
+GET http://localhost:8001/cursos/1
+
+###
+POST http://localhost:8001/cursos
+
+###
+PUT http://localhost:8001/cursos/1
+
+###
+DELETE http://localhost:8001/cursos/1

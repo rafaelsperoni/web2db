@@ -1,18 +1,22 @@
 class CursosModel{
-    mensagem = ""
-    find(query, callback){
-        console.log('find')
-        this.mensagem = 'MÉTODO find do model'
+    findAll(query){
+        return  'MÉTODO find do model'
     }
 
-    create(data, callback){
+    findById(id){
+        return 'Metodo find id do model ' + id
+    }
 
+    create(data, retorno){
+        retorno('MÉTODO create do model')
     }
 
     update(_id, data, callback){
-
+        retorno('MÉTODO update do model')
     }
-    delete(_id, callback){}
+    delete(_id, callback){
+        retorno('MÉTODO delete do model')
+    }
 }
 
-module.exports = new CursosModel(this.mensagem)
+module.exports = new CursosModel()
