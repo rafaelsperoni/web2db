@@ -6,22 +6,11 @@ class CursosController{
     getAll(req, res, next){
         try {
             const cursos = this.model.findAll({})
-            return res.render('views/cursos')
-            
+            return res.render('cursos', {cursos: cursos})            
         } catch(e) {
             return res.status(401).json({ error: e } )
         }
 
-
-        // this.model.find({},(err, data)=>{
-        //     console.log("data: " + data)
-        //     if(err){
-        //         console.log("error: " + err)
-        //         return res.status(401).send(err)
-        //     }
-        //     console.log('controller getall ', data)
-        //     res.send(data)
-        // })
     }
 
     getById(req, res, next){
@@ -34,9 +23,26 @@ class CursosController{
 
     }
 
-    create(req, res, next){
-        res.send('cria um curso')
+    formCreate(req, res, next){
+        res.render('cursos/insertForm')
     }
+
+    create(req, res){
+        res.send(req.body)
+        // try{
+        //     console.log(req)
+        //     const curso = {
+        //         nome: req.body.nome,
+        //         sigla: req.body.sigla
+        //     }
+        //     return this.model.create(curso, (retorno)=>{
+        //         console.log(retorno)
+        //     })
+        // }catch(e){
+        //     return res.json({error: e})
+        // }
+    }
+
     update(req, res, next){
         res.send('altera um curso')
     }

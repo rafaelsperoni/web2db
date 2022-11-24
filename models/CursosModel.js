@@ -1,6 +1,16 @@
 class CursosModel{
     findAll(query){
-        return  'MÉTODO find do model'
+        const cursos = [
+            {
+                nome: 'Sistemas para Internet',
+                sigla: 'TSI'
+            },
+            {
+                nome: 'Sistemas de Informação',
+                sigla: 'BSI'
+            },
+        ]
+        return cursos
     }
 
     findById(id){
@@ -8,7 +18,8 @@ class CursosModel{
     }
 
     create(data, retorno){
-        retorno('MÉTODO create do model')
+        retorno(data)
+//        retorno('MÉTODO create do model')
     }
 
     update(_id, data, callback){

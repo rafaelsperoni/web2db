@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+    <body>
+        <header>
+            <%- include('../partials/header') %>
+        </header>
+        <main>
+            <div class="row">
+                <h2>Novo Curso</h2>
+            </div>
+            <div>
+                <form action="/cursos/create" method="post" enctype="multipart/form-data">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome">
+                    <br>
+                    <label for="sigla">Sigla</label>
+                    <input type="text" name="sigla" id="sigla">
+                    <br>
+                    <input type="submit" value="Gravar">
+                    <input type="button" value="Cancelar">
+                </form>
+            </div>
+        </main>
+        <footer>
+            <%- include('../partials/footer') %>
+        </footer>
+    </body>
+</html>

@@ -1,14 +1,19 @@
 const express = require('express')
+const multer = require('multer')
 const CursosController = require('../controllers/CursosController')
 const router = express.Router()
 
 router.get('/', (req, res, next) => CursosController.getAll(req, res, next) )
 
+router.get('/create', (req, res, next) => CursosController.formCreate(req, res, next))
+
 router.get('/:id', (req, res, next) => CursosController.getById(req, res, next))
 
-router.post('/', (req, res)=>{
-    res.send('cria um novo curso')
-})
+
+router.post('/create', multer().none(), (req, res)=> CursosController.create(req, res))
+// router.post('/create', multer().none(), (req, res)=>{
+//     res.send(JSON.stringify(req.body))
+// })
 
 router.put('/:id', (req, res)=>{
     res.send('altera um curso')

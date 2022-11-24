@@ -3,7 +3,7 @@ const res = require("express/lib/response")
 const { findById } = require("./CursosModel")
 
 const findAll = (req, res)=>{
-    return {descricao: 'ProfessoresModel - findAll'}
+    return {descricao: 'ProfessoresModel - findAll'} 
 }
 
 const findById = (req, res)=>{
